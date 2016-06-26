@@ -33,4 +33,4 @@ CREATE TABLE `randomavatars`.`avatars` ( `id` INT NOT NULL AUTO_INCREMENT , `pre
 
 ###Contribute
 
-Don't hesitate to improve the code and ask for a pull request, even small ones. I would appreciate to see other people taking part in this project :-).
+Don't hesitate to improve the code and ask for a pull request, even small ones. I would be delighted to see other people taking part in this project :-).
