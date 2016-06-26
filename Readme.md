@@ -1,7 +1,10 @@
 ##randomAvatarsGenerator
 
-![Example](example.png)
 PHP class to randomly generate simple avatars of 25x25 pixels. I was inspired of [Identicon](http://en.wikipedia.org/wiki/Identicon), I reproduce it in PHP but simpler and with far less features.
+
+##Example
+
+![Example](example.png)
 
 ###Usage
 
