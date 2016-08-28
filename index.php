@@ -1,6 +1,6 @@
 <?php
 require 'randomAvatarsGenerator.php';
-$avatar = new RandomAvatars();
+$avatar = new randomAvatarsGenerator();
 $avatar->generate();
 $avatar->draw();
 $avatar->saveImage('generated', 'avatar.png');
@@ -12,7 +12,7 @@ $avatar->saveImage('generated', 'avatar.png');
 	<title>randomAvatarsGenerator</title>
 	<style type="text/css">
 		body {
-			background: #283644;
+			background: #262835;
 			margin: 0;
 		}
 		img.avatar {
