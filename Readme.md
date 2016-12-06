@@ -20,12 +20,12 @@ $avatar->saveInDB();
 ```
 
 If you want to use features related to the database (checkPresetIsUnique and saveInDB) :  
-1 - Make sure you have PDO enabled.
+1 - Make sure you have PDO enabled.  
 2 - Create a table 'avatars' with this SQL code (Don't forget to change DBNAME to your database name) :
 ```sql
 CREATE TABLE `DBNAME`.`avatars` ( `id` INT NOT NULL AUTO_INCREMENT , `preset` VARCHAR(255) NOT NULL , `image_location` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 ```
-3 - Initialize $db in index.php. For example : `$db = new PDO('mysql:host=HOST;dbname=DBNAME', 'USER', 'PASSWORD');`
+3 - Initialize $db in index.php. For example : `$db = new PDO('mysql:host=HOST;dbname=DBNAME', 'USER', 'PASSWORD');`  
 4 - Instanciate RandomAvatars with $db : `$avatar = new RandomAvatars($db);`.
 
 ###Current work
