@@ -11,13 +11,15 @@ PHP class to randomly generate simple avatars of 25x25 pixels. I was inspired of
 Simply use index.php as an example... If you don't want to use features related to the database like checkPresetIsUnique() and saveInDB(), you can remove the corresponding lines.
 
 ```php
-$db = new PDO('mysql:host=HOST;dbname=DBNAME', 'USER', 'PASSWORD');
-$avatar = new RandomAvatars($db);
-$avatar->generate(); //It will generate a random preset.
-$avatar->checkPresetIsUnique(); //It will make sure that the preset has never been saved in the database. If not it will try to generate another one.
-$avatar->draw(); //The image will be drawn according to the preset.
-$avatar->saveImage('generated', 'avatar.png'); //The image will be saved in the folder 'generated' with the name 'avatar.png'
-$avatar->saveInDB(); //It will save the preset and the image location in the databse.
+require 'randomAvatarsGenerator.php'; //Require the class.
+$db = new PDO('mysql:host=HOST;dbname=DBNAME', 'USER', 'PASSWORD'); //Create a connection to your database.
+
+$avatar = new randomAvatarsGenerator(); //Instantiate randomAvatarsGenerator.
+$avatar->generate(); //Generate a random preset.
+$avatar->checkPresetIsUnique(); //Make sure that the preset has never been saved in the database. If yes it will try to generate another one.
+$avatar->draw(); //Draw the image corresponding to the preset.
+$avatar->saveImage('generated', 'avatar.png'); //Save the image in the folder 'generated' with the name 'avatar.png'.
+$avatar->saveInDB(); //Save the preset and the image location in the databse.
 ```
 
 To use checkPresetIsUnique() and saveInDB() :  
