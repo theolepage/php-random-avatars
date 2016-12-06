@@ -11,20 +11,22 @@ PHP class to randomly generate simple avatars of 25x25 pixels. I was inspired of
 Simply use index.php as an example...
 
 ```php
-$avatar = new RandomAvatars($db);
+$avatar = new RandomAvatars();
 $avatar->generate();
 $avatar->checkPresetIsUnique();
 $avatar->draw();
-$avatar->saveImage('generated', 'test.png');
+$avatar->saveImage('generated', 'avatar.png');
 $avatar->saveInDB();
 ```
 
 If you want to use features related to the database (checkPresetIsUnique and saveInDB) :  
-1 - Change $db in index.php.  
-2 - Create a table 'avatars' with this SQL code :
+1 - Make sure you have PDO enabled.
+2 - Create a table 'avatars' with this SQL code (Don't forget to change DBNAME to your database name) :
 ```sql
-CREATE TABLE `randomavatars`.`avatars` ( `id` INT NOT NULL AUTO_INCREMENT , `preset` VARCHAR(255) NOT NULL , `image_location` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `DBNAME`.`avatars` ( `id` INT NOT NULL AUTO_INCREMENT , `preset` VARCHAR(255) NOT NULL , `image_location` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 ```
+3 - Initialize $db in index.php. For example : `$db = new PDO('mysql:host=HOST;dbname=DBNAME', 'USER', 'PASSWORD');`
+4 - Instanciate RandomAvatars with $db : `$avatar = new RandomAvatars($db);`.
 
 ###Current work
 
