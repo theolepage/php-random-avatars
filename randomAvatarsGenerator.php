@@ -123,7 +123,6 @@ class randomAvatarsGenerator {
 		}
 		$req = $this->db->prepare('INSERT INTO avatars(preset, image_location) VALUES(:preset, :image_location)');
 		$req->execute(array('preset' => $this->preset, 'image_location' => $this->image_location));
-		var_dump($req);
 	}
 
 	public function show($tag) {
